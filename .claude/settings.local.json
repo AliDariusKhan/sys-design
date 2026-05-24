@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make install *)",
+      "Bash(make seed-ref *)",
+      "Bash(make api-ref *)",
+      "Bash(curl -sf http://localhost:8000/healthz)",
+      "Bash(curl -s http://localhost:8000/healthz)",
+      "Bash(curl -s http://localhost:8000/links/aB3xQ12)",
+      "Bash(curl -s -X POST http://localhost:8000/links -H 'content-type: application/json' -d '{\"target_url\":\"https://docs.python.org/3/\"}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} -> %{redirect_url}\\\\n\" http://localhost:8000/aB3xQ12)",
+      "Bash(curl -s http://localhost:8000/links/aB3xQ12/stats)",
+      "Bash(curl -s -o /dev/null -w 'first:  %{http_code}\\\\n' -X POST http://localhost:8000/links -H 'content-type: application/json' -d '{\"target_url\":\"https://x.com\",\"custom_alias\":\"mytalk2025\"}')",
+      "Bash(curl -s -o /dev/null -w 'second: %{http_code}\\\\n' -X POST http://localhost:8000/links -H 'content-type: application/json' -d '{\"target_url\":\"https://y.com\",\"custom_alias\":\"mytalk2025\"}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -X DELETE http://localhost:8000/links/mytalk2025)",
+      "Bash(curl -s -o /dev/null -w \"after-delete redirect: %{http_code}\\\\n\" http://localhost:8000/mytalk2025)",
+      "Bash(curl -s http://localhost:8000/users/ali)",
+      "Bash(curl -s \"http://localhost:8000/users/ali/timeline?limit=5\")",
+      "Bash(curl -s \"http://localhost:8000/users/dario/tweets?limit=5\")",
+      "Bash(curl -s -X POST http://localhost:8000/tweets -H 'content-type: application/json' -d '{\"user_id\":1,\"text\":\"hello from smoke test\"}')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}\\\\n' -X POST http://localhost:8000/tweets/1/like -H 'content-type: application/json' -d '{\"user_id\":2}')",
+      "Bash(make db *)",
+      "Bash(curl -sf http://localhost:8080/)",
+      "Bash(curl -s http://localhost:8080/)",
+      "Bash(curl -s http://localhost:8080/tweets/content/)"
+    ]
+  }
+}
