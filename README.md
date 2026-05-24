@@ -1,6 +1,6 @@
 # sys-design
 
-Hands-on system design practice. Each problem is a self-contained Jupyter notebook — schema, API, and test calls all in one place, no server required.
+Each problem is a self-contained Jupyter notebook. Therein you'll find the problem description and skeleton code where you'll implement the RESTful API and database schema.
 
 ## Problems
 
